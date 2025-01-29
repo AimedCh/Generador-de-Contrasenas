@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Contraseñas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="body-background">
+    <div
+      class="absolute bottom-4 right-4 text-white text-sm font-medium italic"
+    >
+      Directed by Aimed Ch
+    </div>
+    <button id="toggle-dark-mode">Modo Oscuro</button>
+
+    <div class="flex justify-center items-center min-h-screen">
+      <div
+        class="p-8 rounded-3xl shadow-2xl max-w-sm w-full bg-gray-200 dark:bg-gray-200 dark:border-gray-700 transition-all"
+      >
+        <h1
+          class="text-3xl font-extrabold text-primary text-center mb-6 dark:text-gray-200"
+        >
+          Password Generator
+        </h1>
+
+        <div class="space-y-4">
+          <div>
+            <label
+              for="longitud"
+              class="text-lg font-semibold text-secondary dark:text-gray-300"
+            >
+              Password Length
+            </label>
+            <input
+              type="number"
+              id="longitud"
+              class="w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-white dark:border-gray-600"
+              min="8"
+              max="20"
+              value="12"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label
+              class="block text-lg font-semibold text-secondary dark:text-gray-300"
+            >
+              Options
+            </label>
+            <div class="space-x-4">
+              <div class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  id="mayusculas"
+                  class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="mayusculas"
+                  class="ml-2 text-secondary dark:text-gray-300"
+                  >Uppercase</label
+                >
+              </div>
+              <div class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  id="minusculas"
+                  class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="minusculas"
+                  class="ml-2 text-secondary dark:text-gray-300"
+                  >Lowercase</label
+                >
+              </div>
+            </div>
+            <div class="space-x-4">
+              <div class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  id="numeros"
+                  class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="numeros"
+                  class="ml-2 text-secondary dark:text-gray-300"
+                  >Numbers</label
+                >
+              </div>
+              <div class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  id="simbolos"
+                  class="h-5 w-5 text-primary border-gray-300 ml-3 rounded focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="simbolos"
+                  class="ml-2 text-secondary dark:text-gray-300"
+                  >Symbols</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="generar"
+            class="w-full py-3 bg-primary text-white rounded-xl shadow-lg transform hover:scale-105 hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary-light transition-all dark:bg-blue-500 dark:hover:bg-blue-400"
+          >
+            Generate Password
+          </button>
+        </div>
+
+        <div class="mt-6">
+          <h2
+            class="text-lg font-semibold text-secondary mb-2 dark:text-gray-300"
+          >
+            Generated Password:
+          </h2>
+          <textarea
+            id="contraseña"
+            class="w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white dark:border-gray-600"
+            rows="3"
+            readonly
+            placeholder="Your new password will appear here..."
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
